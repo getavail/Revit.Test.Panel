@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Revit Test Panel</Name>
+    <Assembly>..\Revit.Test.Panel.2025.dll</Assembly>
+    <AddInId>11033A54-AE42-4E90-A328-920A255D9D45</AddInId>
+    <FullClassName>Revit.Test.Panel.Application</FullClassName>
+    <VendorId>Revit.Test.Panel</VendorId>
+    <VendorDescription>Revit.Test.Panel</VendorDescription>
+  </AddIn>
+</RevitAddIns>

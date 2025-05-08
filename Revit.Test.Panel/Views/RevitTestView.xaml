@@ -1,0 +1,57 @@
+﻿<Page x:Class="Revit.Test.Panel.RevitTestView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Revit.Test.Panel"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance Type=local:RevitTestViewModel}"
+      d:DesignHeight="500" 
+      d:DesignWidth="300"
+      Background="WhiteSmoke"
+      Title="RevitTestView">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0"
+                  ItemsSource="{Binding Path=Items}"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown"
+                  PreviewMouseMove="ListView_PreviewMouseMove"
+                  SelectionMode="Single"
+                  VirtualizingPanel.VirtualizationMode="Standard"
+                  ScrollViewer.IsDeferredScrollingEnabled="True"
+                  ScrollViewer.CanContentScroll="True">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Path=Title}" Width="200" />
+                    <GridViewColumn Header="Path" DisplayMemberBinding="{Binding Path=Path}" Width="500" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="1" 
+              VerticalAlignment="Bottom" 
+              Height="40">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Select Folder..."
+                        ToolTip="Select Families Folder"
+                        Click="Button_Click"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="8 0 8 0"
+                        Padding="4" />
+                <TextBlock Text="{Binding Path=SelectedDirectory}" 
+                           ToolTip="{Binding Path=SelectedDirectory}" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
