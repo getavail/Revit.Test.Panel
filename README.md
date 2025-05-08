@@ -15,7 +15,7 @@ The add-in creates a Dockable Panel that lists Revit Family files from a selecte
 Revit.Test.Panel.2024.addin → %ProgramData%\Autodesk\Revit\Addins\2024\
 Revit.Test.Panel.2025.addin → %ProgramData%\Autodesk\Revit\Addins\2025\
 
-3. The **Revit.Test.Panel.csproj** file is currently only targeting one version of Revit. To switch to a different version of Revit, comment/uncomment out the relevant **<PropertyGroup>** and **<ItemGroup>** sections.
+3. The **Revit.Test.Panel.csproj** file is currently only targeting one version of Revit. To switch to a different version of Revit, comment/uncomment out the relevant `<PropertyGroup>` and `<ItemGroup>` sections.
 
 ---
 
